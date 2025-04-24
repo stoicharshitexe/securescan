@@ -1,13 +1,18 @@
-templates/index.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Firewall Fury by Harsh</title>
     <style>
         body {
-            font-family: 'Courier New', monospace;
-            background-color: #111;
-            color: #00ff00;
+            font-family: 'Courier New', monospace; /* Hacker-style font */
+            background-color: #111; /* Dark background */
+            color: #00ff00; /* Green text - classic hacker color */
             margin: 20px;
+        }
+        h1 {
+            color: #00ff00;
+            text-align: center;
+            margin-bottom: 20px;
         }
         h2 {
             color: #00ff00;
@@ -83,6 +88,13 @@ templates/index.html<!DOCTYPE html>
     </style>
 </head>
 <body>
+    <audio id="background_music" loop autoplay>
+      <source src="cybermusic.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h1>Welcome to Firewall Fury by Harsh</h1>
+
     <h2>SecureScan – Web Tool</h2>
     <form method="POST">
         <input type="text" name="domain" placeholder="Enter domain">
