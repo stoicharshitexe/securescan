@@ -30,4 +30,8 @@ def index():
     return render_template("index.html", result=result, sysinfo=sysinfo)
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run(host='0.0.0.0', port=5000, debug=True)
+=======
+    app.run(host='0.0.0.0', port=5000, debug=True)
+>>>>>>> 65c6854864a27f4583fa48138921bf1c49434c66
