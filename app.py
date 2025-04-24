@@ -64,7 +64,6 @@ def basic_scan(domain):
         return {"error": f"Could not resolve domain: {domain}"}
     except requests.exceptions.RequestException as e:
         return {"error": f"Request failed: {e}"}
-
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = {}
