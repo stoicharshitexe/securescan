@@ -16,9 +16,10 @@ def basic_scan(domain):
         ip = socket.gethostbyname(domain)
         response = requests.get(f"http://{domain}", timeout=5)
         headers = response.headers
-        return {"ip": ip, "headers": headers, "status": response.status_code}
+        formatted_headers = "\n".join([f"{key}: {value}" for key, value in headers.items()])
+        return f"IP Address: {ip}\nStatus Code: {response.status_code}\nHeaders:\n{formatted_headers}"
     except:
-        return {"error": "Scan failed"}
+        return "Scan failed"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
