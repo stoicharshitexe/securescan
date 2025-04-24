@@ -2,6 +2,75 @@
 <html>
 <head>
     <title>SecureScan Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        form {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            flex-grow: 1;
+        }
+        button[type="submit"] {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        h3 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto; /* For horizontal scrolling if needed */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .created-by {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h2>SecureScan – Web Tool</h2>
@@ -21,5 +90,7 @@
         <li>RAM Usage: {{ sysinfo.ram }}%</li>
         <li>Disk Usage: {{ sysinfo.disk }}%</li>
     </ul>
+<p class="created-by">Created by Harsh Kumar</p>
+</body>
 </body>
 </html>
