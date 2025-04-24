@@ -2,64 +2,74 @@
 <html>
 <head>
     <title>SecureScan Dashboard</title>
-    <style>
+ <style>
         body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Courier New', monospace; /* Hacker-style font */
+            background-color: #111; /* Dark background */
+            color: #00ff00; /* Green text - classic hacker color */
             margin: 20px;
         }
         h2 {
-            color: #007bff;
+            color: #00ff00;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 5px;
         }
         form {
             margin-bottom: 20px;
             padding: 15px;
-            background-color: #fff;
+            background-color: #222;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.1);
             display: flex;
             gap: 10px;
             align-items: center;
         }
         input[type="text"] {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #00ff00;
             border-radius: 3px;
             flex-grow: 1;
+            background-color: #333;
+            color: #00ff00;
         }
         button[type="submit"] {
             padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
+            background-color: #00ff00;
+            color: #111;
             border: none;
             border-radius: 3px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         button[type="submit"]:hover {
-            background-color: #218838;
+            background-color: #00cc00;
         }
-        h3 {
-            color: #007bff;
+        h3, h4 {
+            color: #00ff00;
             margin-top: 20px;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 3px;
         }
         pre {
-            background-color: #eee;
+            background-color: #333;
+            color: #00ff00;
             padding: 15px;
             border-radius: 5px;
-            overflow-x: auto; /* For horizontal scrolling if needed */
+            overflow-x: auto;
+            border: 1px solid #00ff00;
         }
         ul {
             list-style-type: none;
             padding: 0;
-            background-color: #fff;
+            background-color: #222;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.1);
             padding: 15px;
+            border: 1px solid #00ff00;
         }
         li {
             padding: 8px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #444;
         }
         li:last-child {
             border-bottom: none;
@@ -67,11 +77,10 @@
         .created-by {
             margin-top: 20px;
             font-size: 0.9em;
-            color: #777;
+            color: #00cc00;
             text-align: center;
         }
-    </style>
-</head>
+    </style> </head>
 <body>
     <h2>SecureScan – Web Tool</h2>
     <form method="POST">
