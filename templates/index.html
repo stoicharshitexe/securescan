@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+templates/index.html<!DOCTYPE html>
 <html>
 <head>
-    <title>SecureScan Dashboard</title>
- <style>
+    <title>Firewall Fury by Harsh</title>
+    <style>
         body {
-            font-family: 'Courier New', monospace; /* Hacker-style font */
-            background-color: #111; /* Dark background */
-            color: #00ff00; /* Green text - classic hacker color */
+            font-family: 'Courier New', monospace;
+            background-color: #111;
+            color: #00ff00;
             margin: 20px;
         }
         h2 {
@@ -80,7 +80,8 @@
             color: #00cc00;
             text-align: center;
         }
-    </style> </head>
+    </style>
+</head>
 <body>
     <h2>SecureScan – Web Tool</h2>
     <form method="POST">
@@ -88,35 +89,35 @@
         <button type="submit">Scan</button>
     </form>
 
- {% if result %}
-        <h3>Scan Result:</h3>
-        {% if result.score is defined %}
-            <p>Security Score: {{ result.score }} / 100</p>
-            {% if result.recommendations %}
-                <h4>Recommendations:</h4>
-                <ul>
-                {% for recommendation in result.recommendations %}
-                    <li>{{ recommendation }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-            <h4>Detailed Scan:</h4>
-            <pre>
-            IP Address: {{ result.ip }}
-            Status Code: {{ result.status }}
-            Headers:
-            {{ result.headers }}
-            {% if result.x_frame_options %}X-Frame-Options: {{ result.x_frame_options }}{% endif %}
-            {% if result.content_security_policy %}Content-Security-Policy: {{ result.content_security_policy }}{% endif %}
-            {% if result.strict_transport_security %}Strict-Transport-Security: {{ result.strict_transport_security }}{% endif %}
-            {% if result.x_content_type_options %}X-Content-Type-Options: {{ result.x_content_type_options }}{% endif %}
-            </pre>
-        {% elif result.error %}
-            <p>{{ result.error }}</p>
-        {% else %}
-            <pre>{{ result }}</pre>
-        {% endif %}
-    {% endif %}
+    {% if result %}
+        <h3>Scan Result:</h3>
+        {% if result.score is defined %}
+            <p>Security Score: {{ result.score }} / 100</p>
+            {% if result.recommendations %}
+                <h4>Recommendations:</h4>
+                <ul>
+                {% for recommendation in result.recommendations %}
+                    <li>{{ recommendation }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            <h4>Detailed Scan:</h4>
+            <pre>
+            IP Address: {{ result.ip }}
+            Status Code: {{ result.status }}
+            Headers:
+            {{ result.headers }}
+            {% if result.x_frame_options %}X-Frame-Options: {{ result.x_frame_options }}{% endif %}
+            {% if result.content_security_policy %}Content-Security-Policy: {{ result.content_security_policy }}{% endif %}
+            {% if result.strict_transport_security %}Strict-Transport-Security: {{ result.strict_transport_security }}{% endif %}
+            {% if result.x_content_type_options %}X-Content-Type-Options: {{ result.x_content_type_options }}{% endif %}
+            </pre>
+        {% elif result.error %}
+            <p>{{ result.error }}</p>
+        {% else %}
+            <pre>{{ result }}</pre>
+        {% endif %}
+    {% endif %}
 
     <h3>System Info:</h3>
     <ul>
@@ -125,6 +126,5 @@
         <li>Disk Usage: {{ sysinfo.disk }}%</li>
     </ul>
 <p class="created-by">Created by Harsh Kumar</p>
-</body>
 </body>
 </html>
