@@ -79,10 +79,35 @@
         <button type="submit">Scan</button>
     </form>
 
-    {% if result %}
-        <h3>Scan Result:</h3>
-        <pre>{{ result }}</pre>
-    {% endif %}
+ {% if result %}
+        <h3>Scan Result:</h3>
+        {% if result.score is defined %}
+            <p>Security Score: {{ result.score }} / 100</p>
+            {% if result.recommendations %}
+                <h4>Recommendations:</h4>
+                <ul>
+                {% for recommendation in result.recommendations %}
+                    <li>{{ recommendation }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            <h4>Detailed Scan:</h4>
+            <pre>
+            IP Address: {{ result.ip }}
+            Status Code: {{ result.status }}
+            Headers:
+            {{ result.headers }}
+            {% if result.x_frame_options %}X-Frame-Options: {{ result.x_frame_options }}{% endif %}
+            {% if result.content_security_policy %}Content-Security-Policy: {{ result.content_security_policy }}{% endif %}
+            {% if result.strict_transport_security %}Strict-Transport-Security: {{ result.strict_transport_security }}{% endif %}
+            {% if result.x_content_type_options %}X-Content-Type-Options: {{ result.x_content_type_options }}{% endif %}
+            </pre>
+        {% elif result.error %}
+            <p>{{ result.error }}</p>
+        {% else %}
+            <pre>{{ result }}</pre>
+        {% endif %}
+    {% endif %}
 
     <h3>System Info:</h3>
     <ul>
